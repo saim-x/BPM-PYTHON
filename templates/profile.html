@@ -1,0 +1,22 @@
+<!-- profile.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+</head>
+<body>
+    <h1>User Profile</h1>
+    <h2>Welcome, {{ profile_data['display_name'] }}</h2>
+    
+    {% if profile_data.get('email') %}
+    <p>Email: {{ profile_data['email'] }}</p>
+    {% else %}
+    <p>Email: Not available</p>
+    {% endif %}
+    
+    <!-- Add more profile details as needed -->
+
+</body>
+</html>

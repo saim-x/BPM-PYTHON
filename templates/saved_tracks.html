@@ -1,0 +1,23 @@
+<!-- saved_tracks.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Saved Tracks</title>
+</head>
+<body>
+    <h1>Your Saved Tracks</h1>
+
+    {% if saved_tracks_data %}
+    <ul>
+        {% for track in saved_tracks_data %}
+        <li>{{ track['track']['name'] }} - {{ track['track']['artists'][0]['name'] }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No saved tracks found.</p>
+    {% endif %}
+
+</body>
+</html>

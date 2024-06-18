@@ -1,0 +1,29 @@
+<!-- search.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Tracks</title>
+</head>
+<body>
+    <h1>Search Tracks</h1>
+
+    <form method="POST" action="{{ url_for('main.search') }}">
+        <label for="query">Search Query:</label>
+        <input type="text" id="query" name="query" required>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if search_data['tracks']['items'] %}
+    <ul>
+        {% for track in search_data['tracks']['items'] %}
+        <li>{{ track['name'] }} - {{ track['artists'][0]['name'] }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No tracks found.</p>
+    {% endif %}
+
+</body>
+</html>
